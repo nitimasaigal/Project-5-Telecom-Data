@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 import seaborn as sns
 from sklearn.cluster import KMeans
 from PIL import Image
@@ -148,3 +148,24 @@ sns.heatmap(df.corr(numeric_only= True)[['engagement_score', 'experience_score',
 st.pyplot()
 
 
+
+#import git
+#git.refresh()
+#import os
+#os.environ['GIT_PYTHON_GIT_EXECUTABLE'] = 'https://github.com/nitimasaigal/Project-5-Telecom-Data'
+
+
+#from git import Repo
+
+# Specify the URL of the GitHub repository
+#repo_url = 'https://github.com/nitimasaigal/Project-5-Telecom-Data.git'
+
+# Specify the local path where you want to clone the repository
+#local_path = 'C:\\Users\\Niti\\NEXT HIKES\\PROJECT 5'
+#local_path = r'C:\Users\Niti\NEW_DESTINATION_DIRECTORY'
+#local_path = r'C:\Users\Niti\NEXT HIKES\PROJECT 5\streamlit_dashboard'
+
+
+
+# Clone the repository
+#Repo.clone_from(repo_url, local_path)
