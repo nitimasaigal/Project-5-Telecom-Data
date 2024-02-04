@@ -10,8 +10,13 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 #load data
 def load_data():
-    df = pd.read_csv(r'C:\Users\Niti\NEXT HIKES\PROJECT 5\streamlit_df.csv')
-    return df
+    try:
+        df = pd.read_csv(r'C:\Users\Niti\NEXT HIKES\PROJECT 5\streamlit_df.csv')
+        return df
+    except FileNotFoundError:
+        print('The specified file was not found')
+        return None
+    
 df = load_data()
 
 left_column, right_column = st.columns([1,1])
