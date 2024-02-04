@@ -22,7 +22,10 @@ df = load_data()
 left_column, right_column = st.columns([1,1])
 
 with left_column:
-    st.image(Image.open(r'C:\Users\Niti\NEXT HIKES\PROJECT 5\telecom image.jpg'))
+    try:
+        st.image(Image.open(r'C:\Users\Niti\NEXT HIKES\PROJECT 5\telecom image.jpg'))
+    except FileNotFoundError:
+        st.write("Image file not found")
 
 with right_column:
 #title
