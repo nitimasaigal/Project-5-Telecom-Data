@@ -123,7 +123,16 @@ with right_column:
     st.success('Prediction accuracy is 100%')
 with left_column:
     st.write('### Final Result')
-    st.dataframe(pd.read_csv('C:\\Users\\Niti\\NEXT HIKES\\PROJECT 5\\final_result.csv'))
+    csv_file_path = 'C:\\Users\\Niti\\NEXT HIKES\\PROJECT 5\\final_result.csv'
+    if os.path.exists(csv_file_path):
+        try:
+            data = pd.read_csv(csv_file_path)
+            st.dataframe(data)
+        except Exception as e:
+            print(f"Error reading CSV file: {e}")
+    else:
+        print(f"CSV file not found: {csv_file_path}")
+
 
 
 #visualizations
