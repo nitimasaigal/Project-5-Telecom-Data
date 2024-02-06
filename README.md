@@ -1,4 +1,5 @@
 Streamlit Dashboard link: Network URL: http://192.168.1.5:8501
+(When we click on BROWSE FILES, then we need to attach input_features which is given here in this repository, and then prediction will be there after clicking the button PREDICT)
 
 1. Project Name: User Analytics in the Telecommunication Industry
 
