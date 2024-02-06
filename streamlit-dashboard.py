@@ -85,8 +85,18 @@ st.sidebar.pyplot()
 
 
 
-with open('C:\\Users\\Niti\\NEXT HIKES\\PROJECT 5\\final_model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+import os
+model_file_path = 'C:\\Users\\Niti\\NEXT HIKES\\PROJECT 5\\final_model.pkl'
+if os.path.exists(model_file_path):
+    try:
+        with open(model_file_path, 'rb') as model_file:
+        model = pickle.load(model_file)
+        pass
+    except Exception as e:
+        print(f"Error opening file: {e}")
+else:
+    print(f"File not found: {model_file_path}")
+
 
 def predict(input_data):
     prediction = model.predict(input_data)
