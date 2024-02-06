@@ -1,3 +1,5 @@
+Streamlit Dashboard link: Network URL: http://192.168.1.5:8501
+
 1. Project Name: User Analytics in the Telecommunication Industry
 
 2. Description: This project is related to all the features of a Telecom Industry which includes:
@@ -29,4 +31,4 @@
 
 12. Credits: All credits goes to Shweta Mam and our Faculty Arun Sir.
 
-Streamlit Dashboard link: 
+Streamlit Dashboard link: Network URL: http://192.168.1.5:8501
