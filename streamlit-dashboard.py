@@ -142,6 +142,8 @@ try:
     X = df[['engagement_score', 'experience_score']]
 except KeyError as e:
     print(f"Error accessing columns: {e}")
+except TypeError as e:
+    print(f"Type error encountered: {e}")
 st.write('### KMeans Clustering')
 
 num_clusters = st.slider('Please select number of clusters:', min_value= 1, max_value=5, value=2)
