@@ -177,9 +177,16 @@ else:
 
 
 st.write('### Correlation Heatmap')
-plt.figure(figsize=(10,6), dpi = 200)
-sns.heatmap(df.corr(numeric_only= True)[['engagement_score', 'experience_score','satisfaction_score']], annot=True, cmap= 'coolwarm')
-st.pyplot()
+if 'engagement_score' in df.columns and 'experience_score' in df.columns and 'satisfaction_score' in df.columns:
+    correlation_matrix = df[['engagement_score', 'experience_score', 'satisfaction_score']].corr(numeric_only=True)
+    plt.figure(figsize=(10,6), dpi = 200)
+    sns.heatmap(correlation_matrix, annot=True, cmap= 'coolwarm', fmt=".2f")
+    plt.title('Correlation Heatmap')
+    plt.xlabel('Features')
+    plt.ylabel('Features')
+    st.pyplot()
+else:
+    st.write("The specified columns 'engagement_score', 'experience_score' and 'satisfaction_score' do not exist in the DataFrame")
 
 
 
