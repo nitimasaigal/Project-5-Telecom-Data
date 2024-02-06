@@ -147,9 +147,12 @@ except TypeError as e:
 st.write('### KMeans Clustering')
 
 num_clusters = st.slider('Please select number of clusters:', min_value= 1, max_value=5, value=2)
-kmeans = KMeans(n_clusters=num_clusters)
-kmeans.fit_predict(X)
-pred = kmeans.labels_
+if 'X' in locals():
+    kmeans = KMeans(n_clusters=num_clusters)
+    kmeans.fit_predict(X)
+    pred = kmeans.labels_
+else:
+    st.write("X is not defined. Please make sure the DataFrame is loaded and the specified columns exist.")
 
 plt.figure(figsize=(8,6), dpi = 200)
 plt.scatter(X['engagement_score'], X['experience_score'], c= pred, cmap='viridis', alpha=0.5, edgecolor='k')
